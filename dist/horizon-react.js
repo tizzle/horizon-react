@@ -686,14 +686,14 @@ var _symbol = __webpack_require__(131);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
-var _typeof = typeof _symbol2["default"] === "function" && typeof _iterator2["default"] === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2["default"] === "function" && obj.constructor === _symbol2["default"] && obj !== _symbol2["default"].prototype ? "symbol" : typeof obj; };
+var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports["default"] = typeof _symbol2["default"] === "function" && _typeof(_iterator2["default"]) === "symbol" ? function (obj) {
+exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
   return typeof obj === "undefined" ? "undefined" : _typeof(obj);
 } : function (obj) {
-  return obj && typeof _symbol2["default"] === "function" && obj.constructor === _symbol2["default"] && obj !== _symbol2["default"].prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 };
 
 /***/ }),
@@ -1637,7 +1637,7 @@ module.exports = function (key) {
 
 exports.__esModule = true;
 
-exports["default"] = function (instance, Constructor) {
+exports.default = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
@@ -1797,8 +1797,8 @@ exports.tryCatch = tryCatch;
 
 var root_1 = __webpack_require__(2);
 var Symbol = root_1.root.Symbol;
-exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol["for"] === 'function') ?
-    Symbol["for"]('rxSubscriber') : '@@rxSubscriber';
+exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
+    Symbol.for('rxSubscriber') : '@@rxSubscriber';
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ }),
@@ -1841,8 +1841,8 @@ if (typeof Symbol === 'function') {
     if (Symbol.iterator) {
         exports.$$iterator = Symbol.iterator;
     }
-    else if (typeof Symbol["for"] === 'function') {
-        exports.$$iterator = Symbol["for"]('iterator');
+    else if (typeof Symbol.for === 'function') {
+        exports.$$iterator = Symbol.for('iterator');
     }
 }
 else {
@@ -2131,8 +2131,8 @@ module.exports = react;
 
 if (process.env.NODE_ENV !== 'production') {
   var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol["for"] &&
-    Symbol["for"]('react.element')) ||
+    Symbol.for &&
+    Symbol.for('react.element')) ||
     0xeac7;
 
   var isValidElement = function(object) {
@@ -2637,14 +2637,14 @@ var _typeof2 = __webpack_require__(6);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports["default"] = function (self, call) {
+exports.default = function (self, call) {
   if (!self) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
 
-  return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3["default"])(call)) === "object" || typeof call === "function") ? call : self;
+  return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
 };
 
 /***/ }),
@@ -2876,14 +2876,14 @@ var _typeof2 = __webpack_require__(6);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports["default"] = function (subClass, superClass) {
+exports.default = function (subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3["default"])(superClass)));
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3.default)(superClass)));
   }
 
-  subClass.prototype = (0, _create2["default"])(superClass && superClass.prototype, {
+  subClass.prototype = (0, _create2.default)(superClass && superClass.prototype, {
     constructor: {
       value: subClass,
       enumerable: false,
@@ -2891,7 +2891,7 @@ exports["default"] = function (subClass, superClass) {
       configurable: true
     }
   });
-  if (superClass) _setPrototypeOf2["default"] ? (0, _setPrototypeOf2["default"])(subClass, superClass) : subClass.__proto__ = superClass;
+  if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
 };
 
 /***/ }),
@@ -3657,7 +3657,7 @@ var _typeof3 = _interopRequireDefault(_typeof2);
 exports.deserialize = deserialize;
 exports.serialize = serialize;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PRIMITIVES = ['string', 'number', 'boolean', 'function', 'symbol'];
 
@@ -3671,7 +3671,7 @@ function modifyObject(doc) {
 function deserialize(value) {
   if (value == null) {
     return value;
-  } else if (PRIMITIVES.indexOf(typeof value === 'undefined' ? 'undefined' : (0, _typeof3["default"])(value)) !== -1) {
+  } else if (PRIMITIVES.indexOf(typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) !== -1) {
     return value;
   } else if (Array.isArray(value)) {
     return value.map(deserialize);
@@ -3694,7 +3694,7 @@ function jsonifyObject(doc) {
 function serialize(value) {
   if (value == null) {
     return value;
-  } else if (PRIMITIVES.indexOf(typeof value === 'undefined' ? 'undefined' : (0, _typeof3["default"])(value)) !== -1) {
+  } else if (PRIMITIVES.indexOf(typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) !== -1) {
     return value;
   } else if (Array.isArray(value)) {
     return value.map(serialize);
@@ -3779,11 +3779,11 @@ var _utils = __webpack_require__(226);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.Connector = _Connector2["default"];
-exports.subscribe = _subscribe2["default"];
-exports.utils = _utils2["default"];
+exports.Connector = _Connector2.default;
+exports.subscribe = _subscribe2.default;
+exports.utils = _utils2.default;
 
 /***/ }),
 /* 87 */
@@ -3808,7 +3808,7 @@ var _client = __webpack_require__(92);
 
 var _client2 = _interopRequireDefault(_client);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3837,7 +3837,7 @@ var Connector = function (_Component) {
     var initialState = {};
 
     // the horizon connection
-    _this.horizon = props.horizon ? props.horizon : (0, _client2["default"])(props.horizonProps);
+    _this.horizon = props.horizon ? props.horizon : (0, _client2.default)(props.horizonProps);
 
     // the redux connection
     _this.store = props.store;
@@ -3889,14 +3889,14 @@ var Connector = function (_Component) {
 }(_react.Component);
 
 Connector.propTypes = {
-  store: _propTypes2["default"].shape({
-    subscribe: _propTypes2["default"].func.isRequired,
-    dispatch: _propTypes2["default"].func.isRequired,
-    getState: _propTypes2["default"].func.isRequired
+  store: _propTypes2.default.shape({
+    subscribe: _propTypes2.default.func.isRequired,
+    dispatch: _propTypes2.default.func.isRequired,
+    getState: _propTypes2.default.func.isRequired
   }),
-  horizonProps: _propTypes2["default"].shape({}),
-  horizon: _propTypes2["default"].func,
-  children: _propTypes2["default"].element.isRequired
+  horizonProps: _propTypes2.default.shape({}),
+  horizon: _propTypes2.default.func,
+  children: _propTypes2.default.element.isRequired
 };
 Connector.defaultProps = {
   horizonProps: {},
@@ -3910,10 +3910,10 @@ Connector.defaultProps = {
   }
 };
 Connector.childContextTypes = {
-  horizon: _propTypes2["default"].func,
-  store: _propTypes2["default"].object
+  horizon: _propTypes2.default.func,
+  store: _propTypes2.default.object
 };
-exports["default"] = Connector;
+exports.default = Connector;
 
 /***/ }),
 /* 88 */
@@ -4032,7 +4032,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     oneOf: createEnumTypeChecker,
     oneOfType: createUnionTypeChecker,
     shape: createShapeTypeChecker,
-    exact: createStrictShapeTypeChecker
+    exact: createStrictShapeTypeChecker,
   };
 
   /**
@@ -5515,7 +5515,7 @@ var Notification = (function () {
      * @param {function(): void} [complete] An Observer `complete` callback.
      * @return {any}
      */
-    Notification.prototype["do"] = function (next, error, complete) {
+    Notification.prototype.do = function (next, error, complete) {
         var kind = this.kind;
         switch (kind) {
             case 'N':
@@ -5540,7 +5540,7 @@ var Notification = (function () {
             return this.observe(nextOrObserver);
         }
         else {
-            return this["do"](nextOrObserver, error, complete);
+            return this.do(nextOrObserver, error, complete);
         }
     };
     /**
@@ -5554,7 +5554,7 @@ var Notification = (function () {
             case 'N':
                 return Observable_1.Observable.of(this.value);
             case 'E':
-                return Observable_1.Observable["throw"](this.exception);
+                return Observable_1.Observable.throw(this.exception);
             case 'C':
                 return Observable_1.Observable.empty();
         }
@@ -5605,7 +5605,7 @@ exports.Notification = Notification;
 
 var Observable_1 = __webpack_require__(0);
 var catch_1 = __webpack_require__(106);
-Observable_1.Observable.prototype["catch"] = catch_1._catch;
+Observable_1.Observable.prototype.catch = catch_1._catch;
 //# sourceMappingURL=catch.js.map
 
 /***/ }),
@@ -6066,7 +6066,7 @@ var _watchRewrites = __webpack_require__(184);
 
 var _watchRewrites2 = _interopRequireDefault(_watchRewrites);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  @this TermBase
@@ -6080,7 +6080,7 @@ function checkIfLegalToChain(key) {
   if (this._legalMethods.indexOf(key) === -1) {
     throw new Error(key + ' cannot be called on the current query');
   }
-  if ((0, _snakeCase2["default"])(key) in this._query) {
+  if ((0, _snakeCase2.default)(key) in this._query) {
     throw new Error(key + ' has already been called on this query');
   }
 }
@@ -6089,7 +6089,7 @@ function checkIfLegalToChain(key) {
 
 var TermBase = exports.TermBase = function () {
   function TermBase(sendRequest, query, legalMethods) {
-    (0, _classCallCheck3["default"])(this, TermBase);
+    (0, _classCallCheck3.default)(this, TermBase);
 
     this._sendRequest = sendRequest;
     this._query = query;
@@ -6131,7 +6131,7 @@ var TermBase = exports.TermBase = function () {
     var _ref$rawChanges = _ref.rawChanges;
     var rawChanges = _ref$rawChanges === undefined ? false : _ref$rawChanges;
 
-    var query = (0, _watchRewrites2["default"])(this, this._query);
+    var query = (0, _watchRewrites2.default)(this, this._query);
     var raw = this._sendRequest('subscribe', query);
     if (rawChanges) {
       return raw;
@@ -6162,13 +6162,13 @@ var TermBase = exports.TermBase = function () {
     }
 
     checkIfLegalToChain.call(this, 'findAll');
-    (0, _checkArgs2["default"])('findAll', arguments, { maxArgs: 100 });
+    (0, _checkArgs2.default)('findAll', arguments, { maxArgs: 100 });
     return new FindAll(this._sendRequest, this._query, fieldValues);
   };
 
   TermBase.prototype.find = function find(idOrObject) {
     checkIfLegalToChain.call(this, 'find');
-    (0, _checkArgs2["default"])('find', arguments);
+    (0, _checkArgs2.default)('find', arguments);
     return new Find(this._sendRequest, this._query, idOrObject);
   };
 
@@ -6176,7 +6176,7 @@ var TermBase = exports.TermBase = function () {
     var direction = arguments.length <= 1 || arguments[1] === undefined ? 'ascending' : arguments[1];
 
     checkIfLegalToChain.call(this, 'order');
-    (0, _checkArgs2["default"])('order', arguments, { minArgs: 1, maxArgs: 2 });
+    (0, _checkArgs2.default)('order', arguments, { minArgs: 1, maxArgs: 2 });
     return new Order(this._sendRequest, this._query, fields, direction);
   };
 
@@ -6184,7 +6184,7 @@ var TermBase = exports.TermBase = function () {
     var bound = arguments.length <= 1 || arguments[1] === undefined ? 'closed' : arguments[1];
 
     checkIfLegalToChain.call(this, 'above');
-    (0, _checkArgs2["default"])('above', arguments, { minArgs: 1, maxArgs: 2 });
+    (0, _checkArgs2.default)('above', arguments, { minArgs: 1, maxArgs: 2 });
     return new Above(this._sendRequest, this._query, aboveSpec, bound);
   };
 
@@ -6192,13 +6192,13 @@ var TermBase = exports.TermBase = function () {
     var bound = arguments.length <= 1 || arguments[1] === undefined ? 'open' : arguments[1];
 
     checkIfLegalToChain.call(this, 'below');
-    (0, _checkArgs2["default"])('below', arguments, { minArgs: 1, maxArgs: 2 });
+    (0, _checkArgs2.default)('below', arguments, { minArgs: 1, maxArgs: 2 });
     return new Below(this._sendRequest, this._query, belowSpec, bound);
   };
 
   TermBase.prototype.limit = function limit(size) {
     checkIfLegalToChain.call(this, 'limit');
-    (0, _checkArgs2["default"])('limit', arguments);
+    (0, _checkArgs2.default)('limit', arguments);
     return new Limit(this._sendRequest, this._query, size);
   };
 
@@ -6241,7 +6241,7 @@ function makePresentable(observable, query) {
       };
     }();
 
-    if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3["default"])(_ret)) === "object") return _ret.v;
+    if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
   } else {
     var _seedVal = { emitted: false, val: [] };
     return observable.scan(function (state, change) {
@@ -6274,7 +6274,7 @@ function applyChange(arr, change) {
           arr.splice(change.old_offset, 1);
         } else {
           var index = arr.findIndex(function (x) {
-            return (0, _deepEqual2["default"])(x.id, change.old_val.id);
+            return (0, _deepEqual2.default)(x.id, change.old_val.id);
           });
           if (index === -1) {
             // Programming error. This should not happen
@@ -6311,7 +6311,7 @@ function applyChange(arr, change) {
           // If we don't have an offset, find the old val and
           // replace it with the new val
           var _index = arr.findIndex(function (x) {
-            return (0, _deepEqual2["default"])(x.id, change.old_val.id);
+            return (0, _deepEqual2.default)(x.id, change.old_val.id);
           });
           if (_index === -1) {
             // indicates a programming bug. The server gives us the
@@ -6339,7 +6339,7 @@ function applyChange(arr, change) {
  Implements writeOps for the Collection class
 */
 function writeOp(name, args, documents) {
-  (0, _checkArgs2["default"])(name, args);
+  (0, _checkArgs2.default)(name, args);
   var isBatch = true;
   var wrappedDocs = documents;
   if (!Array.isArray(documents)) {
@@ -6393,15 +6393,15 @@ function writeOp(name, args, documents) {
 }
 
 var Collection = exports.Collection = function (_TermBase) {
-  (0, _inherits3["default"])(Collection, _TermBase);
+  (0, _inherits3.default)(Collection, _TermBase);
 
   function Collection(sendRequest, collectionName, lazyWrites) {
-    (0, _classCallCheck3["default"])(this, Collection);
+    (0, _classCallCheck3.default)(this, Collection);
 
     var query = { collection: collectionName };
     var legalMethods = ['find', 'findAll', 'order', 'above', 'below', 'limit'];
 
-    var _this = (0, _possibleConstructorReturn3["default"])(this, _TermBase.call(this, sendRequest, query, legalMethods));
+    var _this = (0, _possibleConstructorReturn3.default)(this, _TermBase.call(this, sendRequest, query, legalMethods));
 
     _this._lazyWrites = lazyWrites;
     return _this;
@@ -6428,7 +6428,7 @@ var Collection = exports.Collection = function (_TermBase) {
   };
 
   Collection.prototype.remove = function remove(documentOrId) {
-    var wrapped = (0, _validIndexValue2["default"])(documentOrId) ? { id: documentOrId } : documentOrId;
+    var wrapped = (0, _validIndexValue2.default)(documentOrId) ? { id: documentOrId } : documentOrId;
     return writeOp.call(this, 'remove', arguments, wrapped);
   };
 
@@ -6437,7 +6437,7 @@ var Collection = exports.Collection = function (_TermBase) {
       throw new Error('removeAll takes an array as an argument');
     }
     var wrapped = documentsOrIds.map(function (item) {
-      if ((0, _validIndexValue2["default"])(item)) {
+      if ((0, _validIndexValue2.default)(item)) {
         return { id: item };
       } else {
         return item;
@@ -6450,27 +6450,27 @@ var Collection = exports.Collection = function (_TermBase) {
 }(TermBase);
 
 var Find = exports.Find = function (_TermBase2) {
-  (0, _inherits3["default"])(Find, _TermBase2);
+  (0, _inherits3.default)(Find, _TermBase2);
 
   function Find(sendRequest, previousQuery, idOrObject) {
-    (0, _classCallCheck3["default"])(this, Find);
+    (0, _classCallCheck3.default)(this, Find);
 
-    var findObject = (0, _validIndexValue2["default"])(idOrObject) ? { id: idOrObject } : idOrObject;
+    var findObject = (0, _validIndexValue2.default)(idOrObject) ? { id: idOrObject } : idOrObject;
     var query = Object.assign({}, previousQuery, { find: findObject });
-    return (0, _possibleConstructorReturn3["default"])(this, _TermBase2.call(this, sendRequest, query, []));
+    return (0, _possibleConstructorReturn3.default)(this, _TermBase2.call(this, sendRequest, query, []));
   }
 
   return Find;
 }(TermBase);
 
 var FindAll = exports.FindAll = function (_TermBase3) {
-  (0, _inherits3["default"])(FindAll, _TermBase3);
+  (0, _inherits3.default)(FindAll, _TermBase3);
 
   function FindAll(sendRequest, previousQuery, fieldValues) {
-    (0, _classCallCheck3["default"])(this, FindAll);
+    (0, _classCallCheck3.default)(this, FindAll);
 
     var wrappedFields = fieldValues.map(function (item) {
-      return (0, _validIndexValue2["default"])(item) ? { id: item } : item;
+      return (0, _validIndexValue2.default)(item) ? { id: item } : item;
     });
     var options = { find_all: wrappedFields };
     var findAllQuery = Object.assign({}, previousQuery, options);
@@ -6481,67 +6481,67 @@ var FindAll = exports.FindAll = function (_TermBase3) {
       // The vararg version of findAll cannot have anything chained to it
       legalMethods = [];
     }
-    return (0, _possibleConstructorReturn3["default"])(this, _TermBase3.call(this, sendRequest, findAllQuery, legalMethods));
+    return (0, _possibleConstructorReturn3.default)(this, _TermBase3.call(this, sendRequest, findAllQuery, legalMethods));
   }
 
   return FindAll;
 }(TermBase);
 
 var Above = exports.Above = function (_TermBase4) {
-  (0, _inherits3["default"])(Above, _TermBase4);
+  (0, _inherits3.default)(Above, _TermBase4);
 
   function Above(sendRequest, previousQuery, aboveSpec, bound) {
-    (0, _classCallCheck3["default"])(this, Above);
+    (0, _classCallCheck3.default)(this, Above);
 
     var option = { above: [aboveSpec, bound] };
     var query = Object.assign({}, previousQuery, option);
     var legalMethods = ['findAll', 'order', 'below', 'limit'];
-    return (0, _possibleConstructorReturn3["default"])(this, _TermBase4.call(this, sendRequest, query, legalMethods));
+    return (0, _possibleConstructorReturn3.default)(this, _TermBase4.call(this, sendRequest, query, legalMethods));
   }
 
   return Above;
 }(TermBase);
 
 var Below = exports.Below = function (_TermBase5) {
-  (0, _inherits3["default"])(Below, _TermBase5);
+  (0, _inherits3.default)(Below, _TermBase5);
 
   function Below(sendRequest, previousQuery, belowSpec, bound) {
-    (0, _classCallCheck3["default"])(this, Below);
+    (0, _classCallCheck3.default)(this, Below);
 
     var options = { below: [belowSpec, bound] };
     var query = Object.assign({}, previousQuery, options);
     var legalMethods = ['findAll', 'order', 'above', 'limit'];
-    return (0, _possibleConstructorReturn3["default"])(this, _TermBase5.call(this, sendRequest, query, legalMethods));
+    return (0, _possibleConstructorReturn3.default)(this, _TermBase5.call(this, sendRequest, query, legalMethods));
   }
 
   return Below;
 }(TermBase);
 
 var Order = exports.Order = function (_TermBase6) {
-  (0, _inherits3["default"])(Order, _TermBase6);
+  (0, _inherits3.default)(Order, _TermBase6);
 
   function Order(sendRequest, previousQuery, fields, direction) {
-    (0, _classCallCheck3["default"])(this, Order);
+    (0, _classCallCheck3.default)(this, Order);
 
     var wrappedFields = Array.isArray(fields) ? fields : [fields];
     var options = { order: [wrappedFields, direction] };
     var query = Object.assign({}, previousQuery, options);
     var legalMethods = ['findAll', 'above', 'below', 'limit'];
-    return (0, _possibleConstructorReturn3["default"])(this, _TermBase6.call(this, sendRequest, query, legalMethods));
+    return (0, _possibleConstructorReturn3.default)(this, _TermBase6.call(this, sendRequest, query, legalMethods));
   }
 
   return Order;
 }(TermBase);
 
 var Limit = exports.Limit = function (_TermBase7) {
-  (0, _inherits3["default"])(Limit, _TermBase7);
+  (0, _inherits3.default)(Limit, _TermBase7);
 
   function Limit(sendRequest, previousQuery, size) {
-    (0, _classCallCheck3["default"])(this, Limit);
+    (0, _classCallCheck3.default)(this, Limit);
 
     var query = Object.assign({}, previousQuery, { limit: size });
     // Nothing is legal to chain after .limit
-    return (0, _possibleConstructorReturn3["default"])(this, _TermBase7.call(this, sendRequest, query, []));
+    return (0, _possibleConstructorReturn3.default)(this, _TermBase7.call(this, sendRequest, query, []));
   }
 
   return Limit;
@@ -6549,7 +6549,7 @@ var Limit = exports.Limit = function (_TermBase7) {
 
 var UserDataTerm = exports.UserDataTerm = function () {
   function UserDataTerm(hz, handshake, socket) {
-    (0, _classCallCheck3["default"])(this, UserDataTerm);
+    (0, _classCallCheck3.default)(this, UserDataTerm);
 
     this._hz = hz;
     this._before = socket.ignoreElements().merge(handshake);
@@ -8491,13 +8491,13 @@ function unsupported(object){
 
 
 exports.__esModule = true;
-exports["default"] = checkArgs;
+exports.default = checkArgs;
 
 var _ordinal = __webpack_require__(182);
 
 var _ordinal2 = _interopRequireDefault(_ordinal);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Validation helper
 function checkArgs(name, args) {
@@ -8524,11 +8524,11 @@ function checkArgs(name, args) {
   }
   for (var i = 0; i < args.length; i++) {
     if (!nullable && args[i] === null) {
-      var ordinality = maxArgs !== 1 ? ' ' + (0, _ordinal2["default"])(i + 1) : '';
+      var ordinality = maxArgs !== 1 ? ' ' + (0, _ordinal2.default)(i + 1) : '';
       throw new Error('The' + ordinality + ' argument to ' + name + ' must be non-null');
     }
     if (args[i] === undefined) {
-      throw new Error('The ' + (0, _ordinal2["default"])(i + 1) + ' argument to ' + name + ' must be defined');
+      throw new Error('The ' + (0, _ordinal2.default)(i + 1) + ' argument to ' + name + ' must be defined');
     }
   }
 }
@@ -8542,7 +8542,7 @@ function checkArgs(name, args) {
 
 
 exports.__esModule = true;
-exports["default"] = ordinal;
+exports.default = ordinal;
 function ordinal(x) {
   if ([11, 12, 13].indexOf(x) !== -1) {
     return x + "th";
@@ -8570,9 +8570,9 @@ var _typeof2 = __webpack_require__(6);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-exports["default"] = validIndexValue;
+exports.default = validIndexValue;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Checks whether the return value is a valid primary or secondary
 // index value in RethinkDB.
@@ -8580,7 +8580,7 @@ function validIndexValue(val) {
   if (val === null) {
     return false;
   }
-  if (['boolean', 'number', 'string'].indexOf(typeof val === 'undefined' ? 'undefined' : (0, _typeof3["default"])(val)) !== -1) {
+  if (['boolean', 'number', 'string'].indexOf(typeof val === 'undefined' ? 'undefined' : (0, _typeof3.default)(val)) !== -1) {
     return true;
   }
   if (val instanceof ArrayBuffer) {
@@ -8600,7 +8600,7 @@ function validIndexValue(val) {
       };
     }();
 
-    if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3["default"])(_ret)) === "object") return _ret.v;
+    if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
   }
   return false;
 }
@@ -8614,7 +8614,7 @@ function validIndexValue(val) {
 
 
 exports.__esModule = true;
-exports["default"] = watchRewrites;
+exports.default = watchRewrites;
 /*
  Some common queries run on an entire collection or on a collection of
  indeterminate size. RethinkDB doesn't actually keep track of the
@@ -8691,7 +8691,7 @@ __webpack_require__(204);
 
 var _serialization = __webpack_require__(84);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PROTOCOL_VERSION = 'rethinkdb-horizon-v0';
 
@@ -8705,12 +8705,12 @@ var STATUS_ERROR = { type: 'error' };
 var STATUS_DISCONNECTED = { type: 'disconnected' };
 
 var ProtocolError = function (_Error) {
-  (0, _inherits3["default"])(ProtocolError, _Error);
+  (0, _inherits3.default)(ProtocolError, _Error);
 
   function ProtocolError(msg, errorCode) {
-    (0, _classCallCheck3["default"])(this, ProtocolError);
+    (0, _classCallCheck3.default)(this, ProtocolError);
 
-    var _this = (0, _possibleConstructorReturn3["default"])(this, _Error.call(this, msg));
+    var _this = (0, _possibleConstructorReturn3.default)(this, _Error.call(this, msg));
 
     _this.errorCode = errorCode;
     return _this;
@@ -8729,7 +8729,7 @@ var ProtocolError = function (_Error) {
 
 
 var HorizonSocket = exports.HorizonSocket = function (_WebSocketSubject) {
-  (0, _inherits3["default"])(HorizonSocket, _WebSocketSubject);
+  (0, _inherits3.default)(HorizonSocket, _WebSocketSubject);
 
   // Deserializes a message from a string. Overrides the version
   // implemented in WebSocketSubject
@@ -8756,11 +8756,11 @@ var HorizonSocket = exports.HorizonSocket = function (_WebSocketSubject) {
     var keepalive = _ref$keepalive === undefined ? 60 : _ref$keepalive;
     var _ref$WebSocketCtor = _ref.WebSocketCtor;
     var WebSocketCtor = _ref$WebSocketCtor === undefined ? WebSocket : _ref$WebSocketCtor;
-    (0, _classCallCheck3["default"])(this, HorizonSocket);
+    (0, _classCallCheck3.default)(this, HorizonSocket);
 
     // Completes or errors based on handshake success. Buffers
     // handshake response for later subscribers (like a Promise)
-    var _this2 = (0, _possibleConstructorReturn3["default"])(this, _WebSocketSubject.call(this, {
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, _WebSocketSubject.call(this, {
       url: url,
       protocol: PROTOCOL_VERSION,
       WebSocketCtor: WebSocketCtor,
@@ -8811,7 +8811,7 @@ var HorizonSocket = exports.HorizonSocket = function (_WebSocketSubject) {
     var _this3 = this;
 
     return function () {
-      _this3.activeRequests["delete"](req.request_id);
+      _this3.activeRequests.delete(req.request_id);
       return { request_id: req.request_id, type: 'end_subscription' };
     };
   };
@@ -9806,7 +9806,7 @@ __webpack_require__(24);
 
 __webpack_require__(210);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var HORIZON_JWT = 'horizon-jwt';
 
@@ -9824,7 +9824,7 @@ function authEndpoint(name) {
   if (!this._authMethods) {
     return _Observable.Observable.ajax(this._horizonPath + '/auth_methods').map(function (ajax) {
       return ajax.response;
-    })["do"](function (authMethods) {
+    }).do(function (authMethods) {
       _this._authMethods = authMethods;
     }).map(endpointForName);
   } else {
@@ -9836,7 +9836,7 @@ function authEndpoint(name) {
 
 var FakeStorage = exports.FakeStorage = function () {
   function FakeStorage() {
-    (0, _classCallCheck3["default"])(this, FakeStorage);
+    (0, _classCallCheck3.default)(this, FakeStorage);
     this._storage = new Map();
   }
 
@@ -9849,7 +9849,7 @@ var FakeStorage = exports.FakeStorage = function () {
   };
 
   FakeStorage.prototype.removeItem = function removeItem(a) {
-    return this._storage["delete"](a);
+    return this._storage.delete(a);
   };
 
   return FakeStorage;
@@ -9860,7 +9860,7 @@ function getStorage() {
 
   var storage = void 0;
   try {
-    if (!storeLocally || (typeof window === 'undefined' ? 'undefined' : (0, _typeof3["default"])(window)) !== 'object' || window.localStorage === undefined) {
+    if (!storeLocally || (typeof window === 'undefined' ? 'undefined' : (0, _typeof3.default)(window)) !== 'object' || window.localStorage === undefined) {
       storage = new FakeStorage();
     } else {
       // Mobile safari in private browsing has a localStorage, but it
@@ -9889,7 +9889,7 @@ var TokenStorage = exports.TokenStorage = function () {
     var storage = _ref$storage === undefined ? getStorage(authType.storeLocally) : _ref$storage;
     var _ref$path = _ref.path;
     var path = _ref$path === undefined ? 'horizon' : _ref$path;
-    (0, _classCallCheck3["default"])(this, TokenStorage);
+    (0, _classCallCheck3.default)(this, TokenStorage);
 
     this._storage = storage;
     this._path = path;
@@ -9931,7 +9931,7 @@ var TokenStorage = exports.TokenStorage = function () {
   };
 
   TokenStorage.prototype.setAuthFromQueryParams = function setAuthFromQueryParams() {
-    var parsed = typeof window !== 'undefined' && typeof window.location !== 'undefined' ? (0, _queryParse2["default"])(window.location.search) : {};
+    var parsed = typeof window !== 'undefined' && typeof window.location !== 'undefined' ? (0, _queryParse2.default)(window.location.search) : {};
 
     if (parsed.horizon_token != null) {
       this.set(parsed.horizon_token);
@@ -9989,7 +9989,7 @@ function clearAuthTokens() {
 
 exports.__esModule = true;
 
-exports["default"] = function (str) {
+exports.default = function (str) {
   if (typeof str !== 'string') {
     return {};
   }
@@ -10034,7 +10034,7 @@ exports["default"] = function (str) {
 
 var Observable_1 = __webpack_require__(0);
 var do_1 = __webpack_require__(209);
-Observable_1.Observable.prototype["do"] = do_1._do;
+Observable_1.Observable.prototype.do = do_1._do;
 //# sourceMappingURL=do.js.map
 
 /***/ }),
@@ -10326,7 +10326,7 @@ var AjaxObservable = (function (_super) {
         };
         create.get = ajaxGet;
         create.post = ajaxPost;
-        create["delete"] = ajaxDelete;
+        create.delete = ajaxDelete;
         create.put = ajaxPut;
         create.getJSON = ajaxGetJSON;
         return create;
@@ -10607,7 +10607,7 @@ var _isPlainObject = __webpack_require__(85);
 
 var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Unlike normal queries' .watch(), we don't support rawChanges: true
 // for aggregates
@@ -10644,7 +10644,7 @@ function isPrimitive(value) {
   if (typeof value === 'function') {
     return false;
   }
-  if (['boolean', 'number', 'string'].indexOf(typeof value === 'undefined' ? 'undefined' : (0, _typeof3["default"])(value)) !== -1) {
+  if (['boolean', 'number', 'string'].indexOf(typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) !== -1) {
     return true;
   }
   if (value instanceof Date || value instanceof ArrayBuffer) {
@@ -10657,7 +10657,7 @@ function isPrimitive(value) {
 
 var PrimitiveTerm = function () {
   function PrimitiveTerm(value) {
-    (0, _classCallCheck3["default"])(this, PrimitiveTerm);
+    (0, _classCallCheck3.default)(this, PrimitiveTerm);
 
     this._value = value;
   }
@@ -10689,7 +10689,7 @@ var PrimitiveTerm = function () {
 
 var ObservableTerm = function () {
   function ObservableTerm(value) {
-    (0, _classCallCheck3["default"])(this, ObservableTerm);
+    (0, _classCallCheck3.default)(this, ObservableTerm);
 
     this._value = value;
   }
@@ -10719,7 +10719,7 @@ var ObservableTerm = function () {
 
 var ArrayTerm = function () {
   function ArrayTerm(value) {
-    (0, _classCallCheck3["default"])(this, ArrayTerm);
+    (0, _classCallCheck3.default)(this, ArrayTerm);
 
     // Ensure this._value is an array of Term
     this._value = value.map(function (x) {
@@ -10774,7 +10774,7 @@ var ArrayTerm = function () {
 
 var AggregateTerm = function () {
   function AggregateTerm(value) {
-    (0, _classCallCheck3["default"])(this, AggregateTerm);
+    (0, _classCallCheck3.default)(this, AggregateTerm);
 
     // Ensure this._value is an array of [ key, Term ] pairs
     this._value = Object.keys(value).map(function (k) {
@@ -10855,7 +10855,7 @@ function aggregate(spec) {
   if (Array.isArray(spec)) {
     return new ArrayTerm(spec);
   }
-  if ((0, _isPlainObject2["default"])(spec)) {
+  if ((0, _isPlainObject2.default)(spec)) {
     return new AggregateTerm(spec);
   }
 
@@ -11283,7 +11283,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-exports["default"] = subscribe;
+exports.default = subscribe;
 
 var _lodash = __webpack_require__(222);
 
@@ -11303,7 +11303,7 @@ var _requireResolve = __webpack_require__(223);
 
 var _requireResolve2 = _interopRequireDefault(_requireResolve);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -11320,8 +11320,8 @@ var getDisplayName = function getDisplayName(WrappedComponent) {
 
 var reduxIsAvailable = function reduxIsAvailable() {
   try {
-    (0, _requireResolve2["default"])('redux');
-    (0, _requireResolve2["default"])('react-redux');
+    (0, _requireResolve2.default)('redux');
+    (0, _requireResolve2.default)('react-redux');
     return true;
   } catch (e) {} // eslint-disable-line
 
@@ -11352,7 +11352,7 @@ function subscribe() {
           var data = docs || emptyArray;
 
           // always return an array, even if there's just one document
-          if ((0, _isPlainObject2["default"])(docs)) {
+          if ((0, _isPlainObject2.default)(docs)) {
             data = [docs];
           }
 
@@ -11386,7 +11386,7 @@ function subscribe() {
       }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
-          if (!(0, _lodash2["default"])(nextProps, this.props)) {
+          if (!(0, _lodash2.default)(nextProps, this.props)) {
             this.subscribe(nextProps);
           }
         }
@@ -11410,7 +11410,7 @@ function subscribe() {
             return mapDataToProps.reduce(function (acc, s) {
               acc[s.name] = [];return acc;
             }, {});
-          } else if ((0, _isPlainObject2["default"])(mapDataToProps)) {
+          } else if ((0, _isPlainObject2.default)(mapDataToProps)) {
             return this.getObjectWithDataKeys(Object.keys(mapDataToProps));
           } else if (typeof mapDataToProps === 'function') {
             return this.getObjectWithDataKeys(Object.keys(mapDataToProps(props)));
@@ -11437,7 +11437,7 @@ function subscribe() {
         value: function subscribe(props) {
           if (Array.isArray(mapDataToProps)) {
             this.subscribeToArray(props);
-          } else if ((0, _isPlainObject2["default"])(mapDataToProps)) {
+          } else if ((0, _isPlainObject2.default)(mapDataToProps)) {
             this.subscribeToObject(props);
           } else if (typeof mapDataToProps === 'function') {
             this.subscribeToFunction(props);
@@ -11472,8 +11472,8 @@ function subscribe() {
          * Query is written as an array.
          *
          * const mapDataToProps = [
-         *   { name: 'todos' query: hz => hz('todos').limit(5) }
-         *   { name: 'users' query: hz => hz('users').limit(5) }
+         *   { name: 'todos', query: hz => hz('todos').limit(5) },
+         *   { name: 'users', query: hz => hz('users').limit(5) }
          * ];
          */
 
@@ -11496,8 +11496,8 @@ function subscribe() {
          * Example:
          *
          * const mapDataToProps = {
-         *   todos: hz => hz('todos').findAll(...)
-         *   users: (hz props) => hz('users').limit(5)
+         *   todos: hz => hz('todos').findAll(...),
+         *   users: (hz, props) => hz('users').limit(5)
          * };
          */
 
@@ -11522,7 +11522,7 @@ function subscribe() {
          *
          * const mapDataToProps = (props) => ({
          *   todos: {
-         *     collection: 'todos'
+         *     collection: 'todos',
          *     query: { name: props.name }
          *   }
          * });
@@ -11566,8 +11566,8 @@ function subscribe() {
             _iteratorError = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion && _iterator["return"]) {
-                _iterator["return"]();
+              if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
               }
             } finally {
               if (_didIteratorError) {
@@ -11580,7 +11580,7 @@ function subscribe() {
         /**
          * Builds the query and sets up the callback when data
          * changes come in.
-         * If the query is the same as the old one we keep the old one
+         * If the query is the same as the old one, we keep the old one
          * and ignore the new one.
          */
 
@@ -11592,7 +11592,7 @@ function subscribe() {
 
             // if the new query is the same as the previous one,
             // we keep the previous one
-            if ((0, _lodash2["default"])(prevQuery, query._query)) return; // eslint-disable-line no-underscore-dangle
+            if ((0, _lodash2.default)(prevQuery, query._query)) return; // eslint-disable-line no-underscore-dangle
           }
 
           this.subscriptions[name] = {
@@ -11602,12 +11602,12 @@ function subscribe() {
         }
 
         /**
-         * When new data comes in we update the state of this component
+         * When new data comes in, we update the state of this component,
          * this will cause a rerender of it's child component with the new
          * data in props.
          *
          * @TODO this is probably the place where the data should be propagated
-         * to the redux store. If other components subscribe with the same query
+         * to the redux store. If other components subscribe with the same query,
          * they should find that there's already a query listening and just grab the
          * according data from the app state instead of setting up a separate listener.
          */
@@ -11619,8 +11619,8 @@ function subscribe() {
 
     DataSubscriber.displayName = 'subscribe(DataSubscriber(' + getDisplayName(TargetComponent) + '))';
     DataSubscriber.contextTypes = {
-      horizon: _propTypes2["default"].func,
-      store: _propTypes2["default"].object
+      horizon: _propTypes2.default.func,
+      store: _propTypes2.default.object
     };
 
 
@@ -13509,7 +13509,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports["default"] = function (p) {
+exports.default = function (p) {
   return /*require.resolve*/(!(function webpackMissingModule() { var e = new Error("Cannot find module \".\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 };
 
@@ -13551,10 +13551,10 @@ var _deleteDoc = __webpack_require__(228);
 
 var _deleteDoc2 = _interopRequireDefault(_deleteDoc);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.createDoc = _createDoc2["default"];
-exports.deleteDoc = _deleteDoc2["default"];
+exports.createDoc = _createDoc2.default;
+exports.deleteDoc = _deleteDoc2.default;
 
 /***/ }),
 /* 227 */
@@ -13567,7 +13567,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports["default"] = function (hz, doc) {
+exports.default = function (hz, doc) {
   return hz.store(doc);
 };
 
@@ -13582,7 +13582,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports["default"] = function (hz, query) {
+exports.default = function (hz, query) {
   return hz.remove(query);
 };
 
