@@ -4,7 +4,6 @@ stats.json
 .idea
 .DS_STORE*
 lib
-dist
 rethinkdb_data
 coverage
 .nyc_output
