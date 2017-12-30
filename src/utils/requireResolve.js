@@ -1,1 +1,1 @@
-export default (p) => require.resolve(p);
+export default p => require.resolve(p);

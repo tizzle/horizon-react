@@ -83,13 +83,8 @@ export default class Connector extends Component {
       : this.renderLoading();
   }
 
-  renderConnected() {
-    return Children.only(this.props.children);
-  }
-
-  renderLoading() {
-    return this.props.loadingComponent
-      ? createElement(this.props.loadingComponent)
-      : null;
-  }
+  renderConnected = () => Children.only(this.props.children);
+  renderLoading = () => (
+    this.props.loadingComponent ? createElement(this.props.loadingComponent) : null
+  );
 }

@@ -29,6 +29,7 @@
     "space-before-function-paren": [0, "always"],
     "react/jsx-quotes": [0, "single"],
     "react/prop-types": 0,
+    "react/jsx-filename-extension": 0,
     "react/no-multi-comp": [1, { "ignoreStateless": true }],
     "react/sort-comp": [1, {
       "order": [

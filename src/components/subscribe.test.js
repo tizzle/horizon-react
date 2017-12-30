@@ -3,8 +3,8 @@ import React from 'react';
 import proxyquire from 'proxyquire';
 import { mount } from 'enzyme';
 
-import HorizonMock, { horizonSub } from '../utils/test/HorizonMock';
 import { createStore } from 'redux';
+import HorizonMock, { horizonSub } from '../utils/test/HorizonMock';
 
 import subscribe from './subscribe';
 
@@ -12,7 +12,7 @@ describe('no options:', (test) => {
   test('it should not require any mapping to subscribe', (t) => {
     t.plan(1);
     const horizon = HorizonMock();
-    const store = createStore((state) => state);
+    const store = createStore(state => state);
     const SubscribedComponent = subscribe()(() => <div></div>);
     const mounted = mount(<SubscribedComponent store={store} client={horizon} />);
     mounted.setProps({ horizonProps:{} });

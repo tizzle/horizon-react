@@ -3,8 +3,6 @@ import isPlainObject from 'is-plain-object';
 import { Component, createElement } from 'react';
 import PropTypes from 'prop-types';
 
-import requireResolve from '../utils/requireResolve';
-
 const emptyArray = [];
 const getDisplayName = WrappedComponent => WrappedComponent.displayName ||
   WrappedComponent.name ||
@@ -12,8 +10,8 @@ const getDisplayName = WrappedComponent => WrappedComponent.displayName ||
 
 const reduxIsAvailable = () => {
   try {
-    requireResolve('redux');
-    requireResolve('react-redux');
+    require.resolve('redux');
+    require.resolve('react-redux');
     return true;
   } catch (e) {} // eslint-disable-line
 
@@ -80,29 +78,25 @@ export default function subscribe(opts = {}) {
         });
       }
 
-      getDataNames(props) {
+      getObjectWithDataKeys = keys => (
+        keys.reduce((acc, name) => {
+          acc[name] = [];
+          return acc;
+        }, {})
+      )
+
+      getDataNames = (props) => {
         if (Array.isArray(mapDataToProps)) {
           return mapDataToProps.reduce(
             (acc, s) => { acc[s.name] = []; return acc; },
             {}
           );
         } else if (isPlainObject(mapDataToProps)) {
-          return this.getObjectWithDataKeys(
-            Object.keys(mapDataToProps)
-          );
+          return this.getObjectWithDataKeys(Object.keys(mapDataToProps));
         } else if (typeof mapDataToProps === 'function') {
-          return this.getObjectWithDataKeys(
-            Object.keys(mapDataToProps(props))
-          );
+          return this.getObjectWithDataKeys(Object.keys(mapDataToProps(props)));
         }
         return null;
-      }
-
-      getObjectWithDataKeys(keys) {
-        return keys.reduce((acc, name) => {
-          acc[name] = [];
-          return acc;
-        }, {});
       }
 
       /**
@@ -110,7 +104,7 @@ export default function subscribe(opts = {}) {
        * the subscriptions which should fire setState() every
        * time data changes.
        */
-      subscribe(props) {
+      subscribe = (props) => {
         if (Array.isArray(mapDataToProps)) {
           this.subscribeToArray(props);
         } else if (isPlainObject(mapDataToProps)) {
@@ -125,8 +119,8 @@ export default function subscribe(opts = {}) {
       /**
        * Unsubscribe from all subscriptions.
        */
-      unsubscribe(updateState = true) {
-        Object.keys(this.subscriptions).forEach(k => {
+      unsubscribe = (updateState = true) => {
+        Object.keys(this.subscriptions).forEach((k) => {
           if (this.subscriptions[k].subscription.dispose) {
             this.subscriptions[k].subscription.dispose();
           }
@@ -145,12 +139,10 @@ export default function subscribe(opts = {}) {
        *   { name: 'users', query: hz => hz('users').limit(5) }
        * ];
        */
-      subscribeToArray(props) {
-        mapDataToProps.forEach(
-          ({ query, name }) => {
-            this.handleQuery(query(this.client, props), name);
-          }
-        );
+      subscribeToArray = (props) => {
+        mapDataToProps.forEach(({ query, name }) => {
+          this.handleQuery(query(this.client, props), name);
+        });
       }
 
       /**
@@ -163,14 +155,11 @@ export default function subscribe(opts = {}) {
        *   users: (hz, props) => hz('users').limit(5)
        * };
        */
-      subscribeToObject(props) {
-        Object.keys(mapDataToProps).forEach(
-          name => {
-            const query = mapDataToProps[name];
-
-            this.handleQuery(query(this.client, props), name);
-          }
-        );
+      subscribeToObject = (props) => {
+        Object.keys(mapDataToProps).forEach((name) => {
+          const query = mapDataToProps[name];
+          this.handleQuery(query(this.client, props), name);
+        });
       }
 
       /**
@@ -190,10 +179,11 @@ export default function subscribe(opts = {}) {
        * @param {String} collection is the name of the collection you want to access
        * @param {Object|String} query is the query object which will be passed to "findAll"
        */
-      subscribeToFunction(props) {
+      subscribeToFunction = (props) => {
         const subscribeTo = mapDataToProps(props);
 
-        for (const name of Object.keys(subscribeTo)) {
+        Object.keys(subscribeTo).forEach((key) => {
+          const name = subscribeTo[key];
           let queryResult;
           const { collection, c, query } = subscribeTo[name];
 
@@ -206,7 +196,7 @@ export default function subscribe(opts = {}) {
           }
 
           this.handleQuery(queryResult, name);
-        }
+        });
       }
 
       /**
@@ -215,7 +205,7 @@ export default function subscribe(opts = {}) {
        * If the query is the same as the old one, we keep the old one
        * and ignore the new one.
        */
-      handleQuery(query, name) {
+      handleQuery = (query, name) => {
         if (this.subscriptions[name]) {
           const prevQuery = this.subscriptions[name].query;
 
@@ -264,7 +254,12 @@ export default function subscribe(opts = {}) {
        * Pass options to redux "connect" so there's no need to use
        * two wrappers in application code.
        */
-      const { mapStateToProps, mapDispatchToProps, mergeProps, options } = opts;
+      const {
+        mapStateToProps,
+        mapDispatchToProps,
+        mergeProps,
+        options
+      } = opts;
       const redux = require('react-redux');
 
       return redux.connect(
