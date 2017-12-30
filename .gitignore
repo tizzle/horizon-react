@@ -3,7 +3,6 @@ npm-debug.log
 stats.json
 .idea
 .DS_STORE*
-lib
 rethinkdb_data
 coverage
 .nyc_output
