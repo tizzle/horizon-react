@@ -1,11 +1,11 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 const config = {
   module: {
     loaders: [
       {
         test: /\.js?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         include: /src/,
         exclude: /node_modules/
       }

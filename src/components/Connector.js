@@ -1,4 +1,5 @@
-import { PropTypes, Component, createElement, Children } from 'react';
+import { Component, createElement, Children } from 'react';
+import PropTypes from 'prop-types';
 import Horizon from '@horizon/client';
 
 /**
@@ -12,13 +13,14 @@ export default class Connector extends Component {
       dispatch: PropTypes.func.isRequired,
       getState: PropTypes.func.isRequired
     }),
-    horizonProps: PropTypes.object,
+    horizonProps: PropTypes.shape({}),
     horizon: PropTypes.func,
     children: PropTypes.element.isRequired
   };
 
   static defaultProps = {
     horizonProps: {},
+    horizon: undefined,
     store: {
       subscribe() {},
       dispatch() {},
@@ -38,15 +40,15 @@ export default class Connector extends Component {
 
     // the horizon connection
     this.horizon = props.horizon
-    ? props.horizon
-    : Horizon(props.horizonProps);
+      ? props.horizon
+      : Horizon(props.horizonProps);
 
     // the redux connection
     this.store = props.store;
 
     initialState.hzStatus = props.horizon
-    ? props.horizon.status().getValue()
-    : false;
+      ? props.horizon.status().getValue()
+      : false;
 
     this.state = initialState;
   }
@@ -77,8 +79,8 @@ export default class Connector extends Component {
 
   render() {
     return this.state.hzStatus.type === 'ready'
-    ? this.renderConnected()
-    : this.renderLoading();
+      ? this.renderConnected()
+      : this.renderLoading();
   }
 
   renderConnected() {
@@ -87,7 +89,7 @@ export default class Connector extends Component {
 
   renderLoading() {
     return this.props.loadingComponent
-    ? createElement(this.props.loadingComponent)
-    : null;
+      ? createElement(this.props.loadingComponent)
+      : null;
   }
 }

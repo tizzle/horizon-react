@@ -3,15 +3,15 @@ import React from 'react';
 import proxyquire from 'proxyquire';
 import { mount } from 'enzyme';
 
-import HorizonMock from '../utils/test/HorizonMock';
 import { createStore } from 'redux';
+import HorizonMock from '../utils/test/HorizonMock';
 
 import Connector from './Connector';
 
 describe('Props', (test) => {
   test('it should load horizon itself if not passed an instance', (t) => {
     t.plan(1);
-    const store = createStore((state) => state);
+    const store = createStore(state => state);
     const MockedConnector = proxyquire('./Connector', {
       '@horizon/client'(opts) {
         t.pass();
